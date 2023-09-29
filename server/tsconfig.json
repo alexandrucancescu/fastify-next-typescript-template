@@ -16,17 +16,20 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
-
-    "outDir": "dist",
-    "baseUrl": "./src"
+    "rootDir": ".",
+    "outDir": "../dist",
+    "baseUrl": "../",
+    "paths": {
+      "*": ["../node_modules/*"]
+    }
   },
   "filesGlob": [
-    "./node_modules/@types/*.d.ts"
+    "../node_modules/@types/*.d.ts"
   ],
   "include": [
-    "src/**/*.ts"
+    "./**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "../node_modules"
   ]
 }

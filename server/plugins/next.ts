@@ -1,7 +1,7 @@
 import next from "@fastify/nextjs";
-import fp from "fastify-plugin";
+import plugin from "fastify-plugin";
 
-export default fp(async (fastify) => {
+export default plugin(async (fastify) => {
    console.log(process.env.NODE_ENV);
    await fastify.register(next, {
       noServeAssets: false,

@@ -1,7 +1,5 @@
 import * as process from "process";
 
-type TEnv = "development" | "production" | "test";
-
 const prettyLog = {
 	transport: {
 		target: 'pino-pretty',

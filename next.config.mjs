@@ -3,6 +3,6 @@
 **/
 export default {
     typescript: {
-        tsconfigPath: "next.tsconfig.json",
+        tsconfigPath: "tsconfig.next.json",
     },
 };
