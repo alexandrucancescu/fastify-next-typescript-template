@@ -4,7 +4,8 @@
   "description": "Starter template for projects using Next with fastify server and typescript",
   "type": "module",
   "scripts": {
-    "start_dev": "node dist/Run.js"
+    "start_dev": "node dist/Run.js",
+    "compile-server": "tsc --watch -p ./server/tsconfig.json"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +29,7 @@
     "@types/node": "^20.2.1",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
+    "prettier": "^3.0.3",
     "typescript": "5.0.4"
   }
 }
