@@ -1,23 +1,19 @@
-import * as process from "process";
-
-const prettyLog = {
-	transport: {
-		target: 'pino-pretty',
-		options: {
-			translateTime: 'HH:MM:ss Z',
-			ignore: 'pid,hostname',
-		},
-	},
-	level: "debug"
-}
-
-export const envToLogger = {
-	development: prettyLog,
-	test: prettyLog,
-	production: true,
-}
-
+import * as process from 'node:process'
+import pino from 'pino'
 
 export default () => {
-	return envToLogger[process.env.NODE_ENV ?? "production"] ?? true
+	const isProduction = process.env.NODE_ENV === 'production'
+
+	return pino({
+		level: process.env.LOG_LEVEL || 'debug',
+		transport: isProduction
+			? undefined
+			: {
+					target: 'pino-pretty',
+					options: {
+						translateTime: 'HH:MM:ss Z',
+						ignore: 'pid,hostname',
+					},
+			  },
+	})
 }

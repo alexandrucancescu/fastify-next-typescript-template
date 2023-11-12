@@ -20,9 +20,10 @@ const app = Fastify({
 async function run() {
 	await setupApp(app)
 	await app.listen({
-		port: Number.parseInt(process.env.PORT!) || 3000,
+		port: Number.parseInt(process.env.PORT) || 3000,
 		host: 'localhost',
 	})
+	console.log(`Listening on ${process.env.PORT || 3000}`)
 }
 
 run().catch((err) => {
